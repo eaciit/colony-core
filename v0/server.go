@@ -103,6 +103,7 @@ func (s *Server) Connect() (sshclient.SshSetting, *ssh.Client, error) {
 
 	if ssh.Type == "File" {
 		client.SSHAuthType = sshclient.SSHAuthType_Certificate
+		client.SSHUser = ssh.User
 		client.SSHKeyLocation = ssh.File
 	} else {
 		client.SSHAuthType = sshclient.SSHAuthType_Password
