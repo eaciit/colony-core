@@ -205,7 +205,7 @@ func (a *Application) StopApp(server *Server) (bool, error) {
 	if a.IsInternalApp {
 		_, cmdStop = a.GetCommand(App_Command_Stop)
 	} else {
-		cmdStop = fmt.Sprintf("sudo kill -9 `pidof %s` %s", a.ID)
+		cmdStop = fmt.Sprintf("sudo kill -9 `pidof %s`", a.ID)
 	}
 
 	fmt.Println("cmd stop", cmdStop)
